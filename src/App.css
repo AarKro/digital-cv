@@ -1,56 +1,137 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #8cf;
+}
+
 .app {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.input-form {
+    position: relative;
+    text-align: center;
+    z-index: 5;
 }
 
 .mouse-down-enter {
-  transform: translate(0);
+    transform: translate(0);
 }
 .mouse-down-enter-active {
-  transform: translate(-10px);
-  transition: transform 350ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    transform: translate(-10px);
+    transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .mouse-down-enter-done {
-  transform: translate(-10px);
+    transform: translate(-10px);
 }
 .mouse-down-exit {
-  transform: translate(-10px);
+    transform: translate(-10px);
 }
 .mouse-down-exit-active {
-  transform: translate(200%);
-  transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    transform: translate(100%);
+    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .mouse-down-exit-done {
-  transform: translate(200%);
-}
-
-.slide-enter {
-  transform: translate(-200%);
-}
-.slide-enter-active {
-  transform: translate(-100%);
-  transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-.slide-enter-done {
-  transform: translate(-100%);
-}
-.slide-exit {
-  transform: translate(-100%);
-}
-.slide-exit-active {
-  transform: translate(-300%);
-  transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000); 
-}
-.slide-exit-done {
-  transform: translate(-300%);
+    transform: translate(100%);
 }
 
 .slide {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  background: #888
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background: #8cf;
+    transform: translate(-100%);
+}
+
+.background-divs {
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.background-div-top {
+    position: absolute;
+    z-index: 3;
+    background-image: linear-gradient(30deg, #8cf 70%, blue);
+    width: 100%;
+    height: 100%;
+    transform: translate(-55%, -90%) rotate(60deg);
+}
+
+.background-div-top-enter {
+    transform: translate(-55%, -90%) rotate(60deg);
+}
+.background-div-top-enter-active {
+    transform: translate(-57%, -90%) rotate(60deg);
+    transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.background-div-top-enter-done {
+    transform: translate(-57%, -90%) rotate(60deg);
+}
+.background-div-top-exit {
+    transform: translate(-57%, -90%) rotate(60deg);
+}
+.background-div-top-exit-active {
+    transform: translate(-55%, -90%) rotate(60deg);
+    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.background-div-mid {
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(45deg, #8cf 80%, blue);
+    width: 100%;
+    height: 100%;
+    transform: translate(-65%, -30%) rotate(45deg);
+}
+
+.background-div-mid-enter {
+    transform: translate(-65%, -30%) rotate(45deg);
+}
+.background-div-mid-enter-active {
+    transform: translate(-69%, -30%) rotate(45deg);
+    transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.background-div-mid-enter-done {
+    transform: translate(-69%, -30%) rotate(45deg);
+}
+.background-div-mid-exit {
+    transform: translate(-69%, -30%) rotate(45deg);
+}
+.background-div-mid-exit-active {
+    transform: translate(-65%, -30%) rotate(45deg);
+    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.background-div-bot {
+    position: absolute;
+    z-index: 2;
+    background-image: linear-gradient(70deg, #8cf 70%, blue);
+    width: 100%;
+    height: 100%;
+    transform: translate(-60%, 30%) rotate(30deg);
+}
+
+.background-div-bot-enter {
+    transform: translate(-60%, 30%) rotate(30deg);
+}
+.background-div-bot-enter-active {
+    transform: translate(-61%, 30%) rotate(30deg);
+    transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.background-div-bot-enter-done {
+    transform: translate(-61%, 30%) rotate(30deg);
+}
+.background-div-bot-exit {
+    transform: translate(-61%, 30%) rotate(30deg);
+}
+.background-div-bot-exit-active {
+    transform: translate(-60%, 30%) rotate(45deg);
+    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }

@@ -16,13 +16,7 @@ export default class Slide extends React.Component {
 
     render() {
         return (
-            <CSSTransition
-                in={this.state.showSlide}
-                timeout={1000}
-                classNames="slide"
-            >
-                <div className="slide">Slide</div>
-            </CSSTransition>
+            <div className="slide">Slide</div>
         );
     }
 }

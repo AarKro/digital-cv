@@ -4,32 +4,62 @@ import Slide from './Slide';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      buttonDown: false,
-      showSlide: false
+        this.state = {
+            buttonDown: false,
+            showContent: false
+        }
     }
-  }
 
-  render() {
-    return (
-      <CSSTransition
-        in={this.state.buttonDown}
-        timeout={1000}
-        classNames="mouse-down"
-      >
-        <div>
-          <div className="app">
-            <input type="text" />
-            <button onClick={() => this.setState({ showSlide: true })} onMouseDown={() => this.setState({ buttonDown: true })} onMouseUp={() => this.setState({ buttonDown: false })}>-></button>
-          </div>
-          {this.state.showSlide && <Slide />}
-        </div>
-      </CSSTransition>
-    );
-  }
+    render() {
+        return (
+            <CSSTransition
+                in={this.state.buttonDown}
+                timeout={1000}
+                classNames="mouse-down"
+            >
+                <div>
+                    <div className="app">
+                        <div className="input-form">
+                            <input type="text" />
+                            <button
+                                onMouseDown={() => this.setState({ buttonDown: true })}
+                                onMouseUp={() => this.setState({ buttonDown: false, showContent: true })}
+                            >
+                                ->
+                            </button>
+                        </div>
+                        <div className="background-divs">
+                            <CSSTransition
+                                in={this.state.buttonDown}
+                                timeout={1000}
+                                classNames="background-div-top"
+                            >
+                                <div className="background-div-top"/>
+                            </CSSTransition>
+                            <CSSTransition
+                                in={this.state.buttonDown}
+                                timeout={1000}
+                                classNames="background-div-mid"
+                            >
+                                <div className="background-div-mid"/>
+                            </CSSTransition>
+                            <CSSTransition
+                                in={this.state.buttonDown}
+                                timeout={1000}
+                                classNames="background-div-bot"
+                            >
+                                <div className="background-div-bot"/>
+                            </CSSTransition>
+                        </div>
+                    </div>
+                    <Slide showContent={this.state.showContent}/>
+                </div>
+            </CSSTransition>
+        );
+    }
 }
 
 export default App;

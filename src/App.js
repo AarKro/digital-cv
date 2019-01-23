@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import CSSTransition from 'react-transition-group/CSSTransition';
+import Slide from './Slide';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      buttonDown: false,
+      showSlide: false
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <CSSTransition
+        in={this.state.buttonDown}
+        timeout={1000}
+        classNames="mouse-down"
+      >
+        <div>
+          <div className="app">
+            <input type="text" />
+            <button onClick={() => this.setState({ showSlide: true })} onMouseDown={() => this.setState({ buttonDown: true })} onMouseUp={() => this.setState({ buttonDown: false })}>-></button>
+          </div>
+          {this.state.showSlide && <Slide />}
+        </div>
+      </CSSTransition>
     );
   }
 }

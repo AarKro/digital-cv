@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background: #8cf;
+    background: #d4f3cc;
 }
 
 .app {
@@ -11,8 +11,10 @@ body {
 }
 
 .input-form {
-    position: relative;
-    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
     z-index: 5;
 }
 
@@ -20,33 +22,27 @@ body {
     transform: translate(0);
 }
 .mouse-down-enter-active {
-    transform: translate(-10px);
-    transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-.mouse-down-enter-done {
-    transform: translate(-10px);
-}
-.mouse-down-exit {
-    transform: translate(-10px);
-}
-.mouse-down-exit-active {
     transform: translate(100%);
     transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
-.mouse-down-exit-done {
+.mouse-down-enter-done {
     transform: translate(100%);
 }
 
-.slide {
+.slideWrapper {
     position: absolute;
-    top: 0;
-    left: 0;
     z-index: 5;
     width: 100vw;
     height: 100vh;
-    text-align: center;
-    background: #8cf;
+    background: #95e37f;
     transform: translate(-100%);
+}
+
+.slide {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
 }
 
 .background-divs {
@@ -58,80 +54,80 @@ body {
 .background-div-top {
     position: absolute;
     z-index: 3;
-    background-image: linear-gradient(30deg, #8cf 70%, blue);
+    background: #95e37f;
     width: 100%;
     height: 100%;
-    transform: translate(-55%, -90%) rotate(60deg);
+    transform: translate(-90%) skew(-15deg);
 }
 
 .background-div-top-enter {
-    transform: translate(-55%, -90%) rotate(60deg);
+    transform: translate(-90%) skew(-15deg);
 }
 .background-div-top-enter-active {
-    transform: translate(-57%, -90%) rotate(60deg);
+    transform: translate(-95%) skew(-15deg);
     transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .background-div-top-enter-done {
-    transform: translate(-57%, -90%) rotate(60deg);
+    transform: translate(-95%) skew(-15deg);
 }
 .background-div-top-exit {
-    transform: translate(-57%, -90%) rotate(60deg);
+    transform: translate(-95%) skew(-15deg);
 }
 .background-div-top-exit-active {
-    transform: translate(-55%, -90%) rotate(60deg);
+    transform: translate(-90%) skew(-15deg);
     transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 .background-div-mid {
     position: absolute;
-    z-index: 1;
-    background-image: linear-gradient(45deg, #8cf 80%, blue);
+    z-index: 2;
+    background: #aae899;
     width: 100%;
     height: 100%;
-    transform: translate(-65%, -30%) rotate(45deg);
+    transform: translate(-75%) skew(-15deg);
 }
 
 .background-div-mid-enter {
-    transform: translate(-65%, -30%) rotate(45deg);
+    transform: translate(-75%) skew(-15deg);
 }
 .background-div-mid-enter-active {
-    transform: translate(-69%, -30%) rotate(45deg);
+    transform: translate(-91%) skew(-15deg);
     transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .background-div-mid-enter-done {
-    transform: translate(-69%, -30%) rotate(45deg);
+    transform: translate(-91%) skew(-15deg);
 }
 .background-div-mid-exit {
-    transform: translate(-69%, -30%) rotate(45deg);
+    transform: translate(-91%) skew(-15deg);
 }
 .background-div-mid-exit-active {
-    transform: translate(-65%, -30%) rotate(45deg);
+    transform: translate(-75%) skew(-15deg);
     transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 .background-div-bot {
     position: absolute;
-    z-index: 2;
-    background-image: linear-gradient(70deg, #8cf 70%, blue);
+    z-index: 1;
+    background: #bfeeb2;
     width: 100%;
     height: 100%;
-    transform: translate(-60%, 30%) rotate(30deg);
+    transform: translate(-60%) skew(-15deg);
 }
 
 .background-div-bot-enter {
-    transform: translate(-60%, 30%) rotate(30deg);
+    transform: translate(-60%) skew(-15deg);
 }
 .background-div-bot-enter-active {
-    transform: translate(-61%, 30%) rotate(30deg);
+    transform: translate(-88%) skew(-15deg);
     transition: transform 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .background-div-bot-enter-done {
-    transform: translate(-61%, 30%) rotate(30deg);
+    transform: translate(-88%) skew(-15deg);
 }
 .background-div-bot-exit {
-    transform: translate(-61%, 30%) rotate(30deg);
+    transform: translate(-88%) skew(-15deg);
 }
 .background-div-bot-exit-active {
-    transform: translate(-60%, 30%) rotate(45deg);
+    transform: translate(-60%) skew(-15deg);
     transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }

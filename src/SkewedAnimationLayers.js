@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
+import './skewedAnimationLayers.css';
 
 export default function SkewedAnimationLayers(props) {
     return(

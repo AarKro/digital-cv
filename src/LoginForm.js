@@ -26,13 +26,22 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form">
-                <input type="text" onChange={this.handleInput} value={this.state.value} />
-                <button
-                    onMouseDown={this.setButtonDown}
-                    onMouseUp={this.validateInput}
-                >
-                    ->
-                </button>
+                <div className="login-align-wrapper">
+                    <input
+                        className="login-input"
+                        type="text"
+                        onChange={this.handleInput}
+                        value={this.state.value}
+                    />
+                    <button
+                        className="login-button"
+                        onMouseDown={this.setButtonDown}
+                        onMouseUp={this.validateInput}
+                    >
+                        ➜
+                    </button>
+
+                </div>
             </div>
         );
     }

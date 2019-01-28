@@ -17,7 +17,7 @@ export default class Slide extends React.Component {
 
     render() {
         return (
-            <div className="slideWrapper">
+            <div className="slide-wrapper">
                 <div className="slide">Slide</div>
             </div>
         );

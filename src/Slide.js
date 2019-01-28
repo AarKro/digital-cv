@@ -1,5 +1,6 @@
 import React from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
+import './slide.css';
 
 export default class Slide extends React.Component {
     constructor(props) {

@@ -1,26 +1,3 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background: #4394fc;
-}
-
-.app {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
-
-.mouse-down-enter {
-    transform: translate(0);
-}
-.mouse-down-enter-active {
-    transform: translate(100%);
-    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-.mouse-down-enter-done {
-    transform: translate(100%);
-}
-
 .background-divs {
     top: 0;
     left: 0;
@@ -35,7 +12,6 @@ body {
     height: 100%;
     transform: translate(-90%) skew(-15deg);
 }
-
 .background-div-top-enter {
     transform: translate(-90%) skew(-15deg);
 }
@@ -62,7 +38,6 @@ body {
     height: 100%;
     transform: translate(-75%) skew(-15deg);
 }
-
 .background-div-mid-enter {
     transform: translate(-75%) skew(-15deg);
 }
@@ -89,7 +64,6 @@ body {
     height: 100%;
     transform: translate(-60%) skew(-15deg);
 }
-
 .background-div-bot-enter {
     transform: translate(-60%) skew(-15deg);
 }

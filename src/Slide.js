@@ -5,14 +5,6 @@ import './slide.css';
 export default class Slide extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            showSlide: false
-        }
-    }
-
-    componentDidMount() {
-        this.setState({ showSlide: true })
     }
 
     render() {

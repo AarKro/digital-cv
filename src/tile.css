@@ -1,0 +1,26 @@
+.tile {
+    width: 30vw;
+    height: 30vh;
+    background-color: #F00;
+}
+
+.tile-enter {
+    transform: scale(1);
+}
+.tile-enter-active {
+    transform: scale(1.3);
+    transition: transform 200ms ease-out;
+}
+.tile-enter-done {
+    transform: scale(1.3);
+}
+.tile-exit {
+    transform: scale(1.3);
+}
+.tile-exit-active {
+    transform: scale(1);
+    transition: transform 200ms ease-out;
+}
+.tile-exit-done {
+    transform: scale(1);
+}

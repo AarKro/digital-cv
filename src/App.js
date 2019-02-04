@@ -3,6 +3,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import Slide from './Slide';
 import LoginForm from './LoginForm';
 import SkewedAnimationLayers from './SkewedAnimationLayers';
+import Tile from './Tile';
 import './app.css';
 
 export default class App extends Component {
@@ -35,7 +36,7 @@ export default class App extends Component {
             >
                 <div className="app">
                     <LoginForm setButtonDown={this.setButtonDown} validateInput={this.validateInput}/>
-                    <SkewedAnimationLayers trigger={this.state.buttonDown}/>
+                    <Tile/>
                     <Slide showContent={this.state.transition} />
                 </div>
             </CSSTransition>

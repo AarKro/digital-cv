@@ -1,22 +1,12 @@
 body {
     margin: 0;
     overflow: hidden;
-    background: #4394fc;
+    background: white;
 }
 
 .app {
     position: absolute;
     width: 100vw;
     height: 100vh;
-}
-
-.mouse-down-enter {
-    transform: translate(0);
-}
-.mouse-down-enter-active {
-    transform: translate(100%);
-    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-}
-.mouse-down-enter-done {
-    transform: translate(100%);
+    display: flex;
 }

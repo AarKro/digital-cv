@@ -26,7 +26,7 @@ export default class Tile extends React.Component {
                 timeout={500}
                 classNames="tile"
             >
-                <div className="tile" onMouseEnter={this.onMouseEnterTile} onMouseLeave={this.onMouseLeaveTile}/>
+                <div style={{zIndex: this.state.hover ? 2 : 1}} className="tile" onMouseEnter={this.onMouseEnterTile} onMouseLeave={this.onMouseLeaveTile}/>
             </CSSTransition>
         );
     }

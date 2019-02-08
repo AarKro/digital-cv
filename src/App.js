@@ -28,18 +28,14 @@ export default class App extends Component {
     };
 
     render() {
+        //<LoginForm setButtonDown={this.setButtonDown} validateInput={this.validateInput}/>
+        //<Slide showContent={this.state.transition} />
         return (
-            <CSSTransition
-                in={this.state.transition}
-                timeout={1000}
-                classNames="mouse-down"
-            >
-                <div className="app">
-                    <LoginForm setButtonDown={this.setButtonDown} validateInput={this.validateInput}/>
-                    <Tile/>
-                    <Slide showContent={this.state.transition} />
-                </div>
-            </CSSTransition>
+            <div className="app">
+                <Tile/>
+                <Tile/>
+                <Tile/>
+            </div>
         );
     }
 }

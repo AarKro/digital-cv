@@ -4,7 +4,7 @@ import {CSSTransition} from "react-transition-group";
 export const SelectiveViewPanel = (props) => {
     const [animatePanel, setAnimatePanel] = useState(false);
 
-    useEffect(() => setAnimatePanel(props.active), [props.active]);
+    useEffect(() => setAnimatePanel(props.active && props.isVisible), [props.active, props.isVisible]);
 
     return (
         <CSSTransition in={animatePanel} timeout={400} classNames="selective-view-panel-animation">

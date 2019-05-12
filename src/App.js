@@ -11,6 +11,7 @@ export const App = (props) => {
     const validateInput = (value) => setTransition(value === "asdf");
 
     const loginForm = <LoginForm validateInput={validateInput}/>;
+    
     return (
         <React.Fragment>
             <div className={transition ? "app" : "app block-scroll"}>

@@ -4,7 +4,7 @@ import {CSSTransition} from 'react-transition-group';
 export const SelectiveViewButton = (props) => {
     const [animateButton, setAnimateButton] = useState(false);
 
-    useEffect(() => setAnimateButton(props.active), [props.active]);
+    useEffect(() => setAnimateButton(props.active && props.isVisible), [props.active, props.isVisible]);
 
     return (
         <CSSTransition in={animateButton} timeout={400} classNames="selective-view-button-animation">

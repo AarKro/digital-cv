@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {TimelineNode} from '../timeline/TimelineNode';
+import {Timeline} from "../timeline/Timeline";
+import {SelectiveView} from "../selective-view/SelectiveView";
+import {Footer} from "../footer/Footer";
 import './slide.css';
-import {TimelineNode} from './timeline/TimelineNode.js';
-import {Timeline} from "./timeline/Timeline.js";
-import {SelectiveView} from "./selective-view/SelectiveView.js"
 
 const nodeContents = [
     {
@@ -57,33 +58,30 @@ const nodeContents = [
     }
 ];
 
-export default class Slide extends React.Component {
-    constructor(props) {
-        super(props)
+export const Slide = (props) => {
+    const [nodes, setNodes] = useState([]);
+    const [footer, setFooter] = useState("");
 
-        this.state = { nodes: [] }
-    }
-
-    componentDidUpdate = () => {
-        if(this.props.showContent && this.state.nodes.length === 0) {
+    useEffect(() => {
+        if(props.showContent && nodes.length === 0) {
             let index = 0;
             const nodes = nodeContents.map((node) => {
                 index++;
                 return <TimelineNode key={index} title={node.title} date={node.date} content={node.content}/>
             })
-    
-            setTimeout(() => this.setState({nodes: nodes}), 300);
-        }
-    }
 
-    render() {
-        return (
-            <div className="slide-wrapper">
-                <SelectiveView/>
-                <Timeline>
-                    {this.state.nodes}
-                </Timeline>
-            </div>
-        );
-    }
+            setTimeout(() => {setNodes(nodes); setFooter(<Footer/>)}, 300);
+        }
+    });
+
+
+    return (
+        <div className="slide-wrapper">
+            <SelectiveView/>
+            <Timeline>
+                {nodes}
+            </Timeline>
+            {footer}
+        </div>
+    );
 }

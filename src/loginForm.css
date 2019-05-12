@@ -2,14 +2,18 @@
     position: fixed;
     left: 50%;
     top: 40%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     z-index: 5;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .login-button {
+    flex: 1;
     border: 2px solid #214a7e;
     outline: 0;
-    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
     height: 41px;
     color: #214a7e;
     font-size: 20px;
@@ -25,9 +29,11 @@
 }
 
 .login-input {
+    flex: 1;
     border: 2px solid #214a7e;
     outline: 0;
-    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     height: 35px;
     color: #214a7e;
     font-size: 20px;

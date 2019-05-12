@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    overflow: hidden;
     background: white;
+    overflow-x: hidden;
 }
 
 .app {
@@ -9,4 +9,15 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+}
+
+.mouse-down-enter {
+    transform: translate(-100%)
+}
+.mouse-down-enter-active {
+    transform: translate(0);
+    transition: transform 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.mouse-down-enter-done {
+    transform: translate(0);
 }

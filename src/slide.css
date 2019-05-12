@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 5;
     width: 100vw;
-    height: 100vh;
+    height: 140%;
     background: #7bb4fc;
     transform: translate(-100%);
 }

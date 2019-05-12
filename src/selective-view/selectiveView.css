@@ -1,0 +1,118 @@
+.selective-view {
+    width: 90%;
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.selective-view-button-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    min-width: 200px;
+    height: 360px;
+}
+
+.selective-view-button {
+    flex: 1;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    border: none;
+    align-self: flex-end;
+    outline: none;
+    background-color: #3a89c8;
+    box-shadow: 2px 2px 2px #7e8184;
+}
+
+.selective-view-panel-container {
+    flex: 1;
+    padding: 50px;
+    border-left: 5px solid #3a89c8;
+    border-bottom: 5px solid #3a89c8;
+    border-radius: 10px 0 10px 10px;
+}
+
+.selective-view-panel {
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-200px);
+}
+
+.selective-view-panel-animation-enter {
+    opacity: 0;
+    transform: translateY(-200px);
+}
+
+.selective-view-panel-animation-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.selective-view-panel-animation-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.selective-view-panel-animation-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.selective-view-panel-animation-exit-active {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.selective-view-panel-animation-exit-done {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.selective-view-button-animation-enter {
+    border-radius: 200px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.selective-view-button-animation-enter-active {
+    margin-right: 0;
+    border-radius: 200px 0 0 200px;
+    width: 110px;
+    box-shadow: none;
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.selective-view-button-animation-enter-done {
+    margin-right: 0;
+    width: 110px;
+    border-radius: 200px 0 0 200px;
+    box-shadow: none;
+}
+
+.selective-view-button-animation-exit {
+    margin-right: 0;
+    width: 110px;
+    border-radius: 200px 0 0 200px;
+    box-shadow: none;
+}
+
+.selective-view-button-animation-exit-active {
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 200px;
+    box-shadow: 2px 2px 2px #7e8184;
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.selective-view-button-animation-exit-done {
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 200px;
+    box-shadow: 2px 2px 2px #7e8184;
+}

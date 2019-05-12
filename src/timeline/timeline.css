@@ -1,0 +1,126 @@
+.timeline {
+    font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+    margin: 30px 50px 30px 100px;
+}
+
+.timeline-node {
+    margin: 0 30px 0 30px;
+    padding: 15px;
+    border-left: 5px solid #3a89c8;
+}
+
+.timeline-node-start {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 5px solid #3a89c8;
+    border-radius: 30px;
+    margin: -15px 0 0 -37px;
+    background: #3a89c8;
+}
+
+.timeline-node-end {
+    margin: 0 30px 0 30px;
+    border-left: 5px solid #3a89c8;
+}
+
+.timeline-node-knot {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border: 5px solid #3a89c8;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: -25px;
+    background: white;
+}
+
+.timeline-node-knot-tag {
+    display: inline-block;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 -30px -132px;
+    vertical-align: middle;
+    background: #e86971;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.timeline-node-knot-tag::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 73px;
+    z-index: -1;
+    background-color: #e86971;
+}
+
+.timeline-node-leaf {
+    display: inline-block;
+    margin: -24px 0 0 10px;
+    border: 1px solid #3a89c8;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #7e8184;
+    background-color: #f6f7f7;
+}
+
+.timeline-node-leaf-knot {
+    margin: 0 0 -16px -16px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid #3a89c8;
+    border-width: 1px 0 0 1px;
+    background: #f6f7f7;
+    transform: rotate(-45deg);
+}
+
+.timeline-node-leaf-title {
+    margin: 0 0 12px 5px;
+    font-weight: bold;
+}
+
+.timeline-node-leaf-content {
+    margin: 0 0 0 5px;
+}
+
+.timeline-node-leaf-animation-preset {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.timeline-node-leaf-animation-enter {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.timeline-node-leaf-animation-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.timeline-node-leaf-animation-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-node-knot-tag-animation-enter {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.timeline-node-knot-tag-animation-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.timeline-node-knot-tag-animation-enter-done {
+    opacity: 1;
+    transform: scale(1);
+}

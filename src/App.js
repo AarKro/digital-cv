@@ -13,7 +13,7 @@ export const App = (props) => {
     const loginForm = <LoginForm validateInput={validateInput}/>;
     return (
         <React.Fragment>
-            <div className="app">
+            <div className={transition ? "app" : "app block-scroll"}>
                 <Tile content={loginForm}/>
                 <Tile/>
                 <Tile/>

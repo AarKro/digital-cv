@@ -1,6 +1,6 @@
 .selective-view {
-    width: 90%;
-    margin: 50px;
+    width: 60%;
+    margin: 50px auto;
     display: flex;
     flex-direction: row;
 }
@@ -9,8 +9,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 120px;
+    min-width: 120px;
     height: 360px;
 }
 
@@ -25,6 +25,7 @@
     outline: none;
     background-color: #3a89c8;
     box-shadow: 2px 2px 2px #7e8184;
+    cursor: pointer;
 }
 
 .selective-view-panel-container {

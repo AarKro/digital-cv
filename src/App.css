@@ -10,6 +10,11 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    overflow-x: hidden;
+}
+
+.block-scroll {
+    overflow-y: hidden;
 }
 
 .mouse-down-enter {

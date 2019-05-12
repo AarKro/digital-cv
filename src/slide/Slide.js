@@ -3,6 +3,7 @@ import {TimelineNode} from '../timeline/TimelineNode';
 import {Timeline} from "../timeline/Timeline";
 import {SelectiveView} from "../selective-view/SelectiveView";
 import {Footer} from "../footer/Footer";
+import {Header} from "../header/Header"
 import './slide.css';
 
 const nodeContents = [
@@ -33,33 +34,19 @@ const nodeContents = [
     },
     {
         date: "10.05.2019",
-        title: "5th Timeline node with no content (Not Supported)",
+        title: "6th Timeline node with no content (Not Supported)",
         content: "test test test test test"
     },
     {
         date: "10.05.2019",
-        title: "5th Timeline node with no content (Not Supported)",
+        title: "7th Timeline node with no content (Not Supported)",
         content: "test test test test test"
     },
-    {
-        date: "10.05.2019",
-        title: "5th Timeline node with no content (Not Supported)",
-        content: "test test test test test"
-    },
-    {
-        date: "10.05.2019",
-        title: "5th Timeline node with no content (Not Supported)",
-        content: "test test test test test"
-    },
-    {
-        date: "10.05.2019",
-        title: "5th Timeline node with no content (Not Supported)",
-        content: "test test test test test"
-    }
 ];
 
 export const Slide = (props) => {
     const [nodes, setNodes] = useState([]);
+    const [selectiveView, setSelectiveView] = useState("");
     const [footer, setFooter] = useState("");
 
     useEffect(() => {
@@ -70,17 +57,17 @@ export const Slide = (props) => {
                 return <TimelineNode key={index} title={node.title} date={node.date} content={node.content}/>
             })
 
-            setTimeout(() => {setNodes(nodes); setFooter(<Footer/>)}, 300);
+            setTimeout(() => {setNodes(nodes); setFooter(<Footer/>); setSelectiveView(<SelectiveView/>)}, 300);
         }
     });
 
-
     return (
         <div className="slide-wrapper">
-            <SelectiveView/>
+            <Header/>
             <Timeline>
                 {nodes}
             </Timeline>
+            {selectiveView}
             {footer}
         </div>
     );

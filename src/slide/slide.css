@@ -2,14 +2,7 @@
     position: absolute;
     z-index: 5;
     width: 100vw;
-    height: 175%;
+    min-height: 100vh;
     background: #7bb4fc;
     transform: translate(-100%);
-}
-
-.slide {
-    position: fixed;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
 }

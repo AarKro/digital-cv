@@ -14,7 +14,7 @@ export const App = (props) => {
     
     return (
         <React.Fragment>
-            <div className={transition ? "app" : "app block-scroll"}>
+            <div className={!transition ? "app" : "app block-scroll"}>
                 <Tile content={loginForm}/>
                 <Tile/>
                 <Tile/>

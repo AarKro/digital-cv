@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {TimelineNode} from '../timeline/TimelineNode';
-import {Timeline} from "../timeline/Timeline";
-import {SelectiveView} from "../selective-view/SelectiveView";
-import {Footer} from "../footer/Footer";
-import {Header} from "../header/Header"
+import React, { useState, useEffect } from 'react';
+import { TimelineNode } from '../timeline/TimelineNode';
+import { Timeline } from "../timeline/Timeline";
+import { SelectiveView } from "../selective-view/SelectiveView";
+import { Footer } from "../footer/Footer";
+import { Header } from "../header/Header"
+import { ReactiveCircleContainer } from '../reactive-circle/ReactiveCircleContainer';
 import './slide.css';
 
 const nodeContents = [
@@ -50,20 +51,21 @@ export const Slide = (props) => {
     const [footer, setFooter] = useState("");
 
     useEffect(() => {
-        if(props.showContent && nodes.length === 0) {
+        if (props.showContent && nodes.length === 0) {
             let index = 0;
             const nodes = nodeContents.map((node) => {
                 index++;
-                return <TimelineNode key={index} title={node.title} date={node.date} content={node.content}/>
+                return <TimelineNode key={index} title={node.title} date={node.date} content={node.content} />
             })
 
-            setTimeout(() => {setNodes(nodes); setFooter(<Footer/>); setSelectiveView(<SelectiveView/>)}, 300);
+            setTimeout(() => { setNodes(nodes); setFooter(<Footer />); setSelectiveView(<SelectiveView />) }, 300);
         }
     });
 
     return (
         <div className="slide-wrapper">
-            <Header/>
+            <ReactiveCircleContainer />
+            <Header />
             <Timeline>
                 {nodes}
             </Timeline>

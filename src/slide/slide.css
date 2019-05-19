@@ -2,7 +2,6 @@
     position: absolute;
     z-index: 5;
     width: 100vw;
-    min-height: 100vh;
     background: #7bb4fc;
     transform: translate(-100%);
 }

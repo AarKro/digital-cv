@@ -8,6 +8,8 @@ import './app.css';
 export const App = (props) => {
     const [transition, setTransition] = useState(false);
 
+    setTimeout(() => setTransition(true), 200);
+
     const validateInput = (value) => setTransition(value === "asdf");
 
     const loginForm = <LoginForm validateInput={validateInput}/>;

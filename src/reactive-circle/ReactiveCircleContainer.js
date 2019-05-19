@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { ReactiveCircle } from './ReactiveCircle';
+import { MousePositionContext } from '../context/MousePositionContext';
 
 const reactiveCircleData = [
     {
         id: 1,
-        top: 200,
-        left: 200,
-        size: 100,
-        stiffness: 10
+        top: '12%',
+        left: '10%',
+        size: 200,
+        stiffness: 15
     },
     {
         id: 2,
-        top: 400,
-        left: 400,
-        size: 100,
-        stiffness: 10
+        top: '18%',
+        left: '80%',
+        size: 150,
+        stiffness: 15
     },
     {
         id: 3,
-        top: 600,
-        left: 600,
-        size: 100,
-        stiffness: 10
+        top: '30%',
+        left: '45%',
+        size: 300,
+        stiffness: 15
     }
 ]
 
 export const ReactiveCircleContainer = (props) => {
     const [reactiveCircles, setReactiveCircles] = useState([]);
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
 
     useEffect(() => {
         const circles = reactiveCircleData.map((item) => {
@@ -46,14 +45,13 @@ export const ReactiveCircleContainer = (props) => {
         setReactiveCircles(circles);
     }, []);
 
-    const trackMousePosition = (event) => {
-        setX(event.pageX);
-        setY(event.pageY);
-    }
-
     return (
-        <div onMouseMove={trackMousePosition} style={{ position: 'fixed', width: '100vw', height: '100%' }}>
-            {reactiveCircles.map((item) => React.cloneElement(item, { cursor: { x: x, y: y } }))}
-        </div>
+        <MousePositionContext.Consumer>
+            {({x, y}) => (
+                <div style={{ position: 'fixed', width: '100vw', height: '100%', zIndex: "-1"}}>
+                    {reactiveCircles.map((item) => React.cloneElement(item, { cursor: { x: x, y: y } }))}
+                </div>
+            )}
+        </MousePositionContext.Consumer>
     );
 }

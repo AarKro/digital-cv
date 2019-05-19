@@ -5,6 +5,7 @@ import { SelectiveView } from "../selective-view/SelectiveView";
 import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header"
 import { ReactiveCircleContainer } from '../reactive-circle/ReactiveCircleContainer';
+import { MousePositionContext } from '../context/MousePositionContext';
 import './slide.css';
 
 const nodeContents = [
@@ -49,6 +50,8 @@ export const Slide = (props) => {
     const [nodes, setNodes] = useState([]);
     const [selectiveView, setSelectiveView] = useState("");
     const [footer, setFooter] = useState("");
+    const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
 
     useEffect(() => {
         if (props.showContent && nodes.length === 0) {
@@ -62,15 +65,25 @@ export const Slide = (props) => {
         }
     });
 
+    const trackMousePosition = (event) => {
+        setX(event.pageX);
+        setY(event.pageY);
+    }
+
     return (
-        <div className="slide-wrapper">
-            <ReactiveCircleContainer />
-            <Header />
-            <Timeline>
-                {nodes}
-            </Timeline>
-            {selectiveView}
-            {footer}
+        <div onMouseMove={trackMousePosition} className="slide-wrapper">
+            <MousePositionContext.Provider value={{x: x, y: y}}>
+                <ReactiveCircleContainer />
+                <Header />
+                <Timeline>
+                    {nodes}
+                </Timeline>
+                {selectiveView}
+                <Timeline>
+                    {nodes}
+                </Timeline>
+                {footer}
+            </MousePositionContext.Provider>
         </div>
     );
 }

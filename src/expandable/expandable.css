@@ -1,6 +1,16 @@
-.expandable {
+.expandable-container {
+    margin: auto;
+    width: 950px;
+}
+
+.expandable-right{
     height: 200px;
-    margin: 20px;
+    margin: 50px 200px 50px 50px;
+}
+
+.expandable-left{
+    height: 200px;
+    margin: 50px 50px 50px 200px;
 }
 
 .expandable-master {

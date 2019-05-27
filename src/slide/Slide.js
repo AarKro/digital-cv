@@ -8,7 +8,9 @@ import { ReactiveCircleContainer } from '../reactive-circle/ReactiveCircleContai
 import { MousePositionContext } from '../context/MousePositionContext';
 import { LanguageChart } from '../language-chart/LanguageChart';
 import { Expandable } from '../expandable/Expandable';
+import { ExpandableContainer } from '../expandable/ExpandableContainer';
 import { CSSTransition } from 'react-transition-group';
+import { Panel } from '../panel/Panel';
 import TrackVisibility from 'react-on-screen';
 import './slide.css';
 
@@ -52,7 +54,6 @@ const nodeContents = [
 
 export const Slide = (props) => {
     const [nodes, setNodes] = useState([]);
-    const [chart, setChart] = useState("");
     const [x, setX] = useState(0);
     const [y, setY] = useState(0);
 
@@ -64,12 +65,7 @@ export const Slide = (props) => {
                 return <TimelineNode key={index} title={node.title} date={node.date} content={node.content} />
             })
 
-            setNodes(nodes);
-            setTimeout(() => setChart(
-                <TrackVisibility once>
-                    <LanguageChart/>
-                </TrackVisibility>
-            ));
+            setTimeout(() => setNodes(nodes), 100);
         }
     });
 
@@ -85,23 +81,32 @@ export const Slide = (props) => {
                 <Header />
                 <CSSTransition in={props.showContent} timeout={200} classNames='slide-content-animation'>
                     <div className='slide-content'>
-                        <Timeline>
-                            {nodes}
-                        </Timeline>
-                        <SelectiveView/>
-                        {chart}
-                        <Timeline>
-                            {nodes}
-                        </Timeline>
-                        <TrackVisibility once>
-                            <Expandable orientation='left'/>
-                        </TrackVisibility>
-                        <TrackVisibility once>
-                            <Expandable orientation='right'/>
-                        </TrackVisibility>
-                        <TrackVisibility once>
-                            <Expandable orientation='left'/>
-                        </TrackVisibility>
+                        <h2>Work Experience</h2>
+                        <Panel alternation="odd">
+                            <Timeline>
+                                {nodes}
+                            </Timeline>
+                        </Panel>
+                        <h2>IT Skills</h2>
+                        <Panel alternation="even">
+                            <SelectiveView/>
+                        </Panel>
+                        <h2>Language Proficiency</h2>
+                        <Panel alternation="odd">
+                            <TrackVisibility once>
+                                <LanguageChart/>
+                            </TrackVisibility>
+                        </Panel>
+                        <h2>Education</h2>
+                        <Panel alternation="even">
+                            <Timeline>
+                                {nodes}
+                            </Timeline>
+                        </Panel>
+                        <h2>Private Interests</h2>
+                        <Panel alternation="odd">
+                            <ExpandableContainer/>
+                        </Panel>
                         <Footer/>
                     </div>
                 </CSSTransition>

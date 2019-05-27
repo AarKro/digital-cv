@@ -6,7 +6,7 @@ export const Expandable = (props) => {
     const [textAppear, setTextAppear] = useState(false);
 
     return (
-        <div className="expandable">
+        <div className={"expandable-" + props.orientation}>
             <CSSTransition in={props.isVisible} timeout={400} classNames={"expandable-master-animation-" + props.orientation}>
                 <div className="expandable-master"/>
             </CSSTransition>

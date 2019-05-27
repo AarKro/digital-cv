@@ -2,6 +2,10 @@
     position: absolute;
     z-index: 5;
     width: 100vw;
-    background: #7bb4fc;
+    background: #8EE4AF;
     transform: translate(-100%);
+}
+
+.slide-wrapper h2 {
+    margin-left: 10%;
 }

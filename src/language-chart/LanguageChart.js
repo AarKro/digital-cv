@@ -23,8 +23,8 @@ const data = {
 export const LanguageChart = (props) => {
     return (
         <div className='language-chart-container'>
-            {props.isVisible && 
-                <Polar data={data} options={{legend: {position: 'right'}, tooltips: {enabled: false}, scale: {ticks: {display: false}}}}/>
+            {props.isVisible &&
+                <Polar height={500} data={data} options={{maintainAspectRatio: false, legend: {position: 'right'}, tooltips: {enabled: false}, scale: {ticks: {display: false}}}}/>
             }
         </div>
     );

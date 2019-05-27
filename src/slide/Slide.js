@@ -6,6 +6,10 @@ import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header"
 import { ReactiveCircleContainer } from '../reactive-circle/ReactiveCircleContainer';
 import { MousePositionContext } from '../context/MousePositionContext';
+import { LanguageChart } from '../language-chart/LanguageChart';
+import { Expandable } from '../expandable/Expandable';
+import { CSSTransition } from 'react-transition-group';
+import TrackVisibility from 'react-on-screen';
 import './slide.css';
 
 const nodeContents = [
@@ -48,8 +52,7 @@ const nodeContents = [
 
 export const Slide = (props) => {
     const [nodes, setNodes] = useState([]);
-    const [selectiveView, setSelectiveView] = useState("");
-    const [footer, setFooter] = useState("");
+    const [chart, setChart] = useState("");
     const [x, setX] = useState(0);
     const [y, setY] = useState(0);
 
@@ -61,7 +64,12 @@ export const Slide = (props) => {
                 return <TimelineNode key={index} title={node.title} date={node.date} content={node.content} />
             })
 
-            setTimeout(() => { setNodes(nodes); setFooter(<Footer />); setSelectiveView(<SelectiveView />) }, 300);
+            setNodes(nodes);
+            setTimeout(() => setChart(
+                <TrackVisibility once>
+                    <LanguageChart/>
+                </TrackVisibility>
+            ));
         }
     });
 
@@ -73,16 +81,30 @@ export const Slide = (props) => {
     return (
         <div onMouseMove={trackMousePosition} className="slide-wrapper">
             <MousePositionContext.Provider value={{x: x, y: y}}>
-                <ReactiveCircleContainer />
+                {/*<ReactiveCircleContainer />*/}
                 <Header />
-                <Timeline>
-                    {nodes}
-                </Timeline>
-                {selectiveView}
-                <Timeline>
-                    {nodes}
-                </Timeline>
-                {footer}
+                <CSSTransition in={props.showContent} timeout={200} classNames='slide-content-animation'>
+                    <div className='slide-content'>
+                        <Timeline>
+                            {nodes}
+                        </Timeline>
+                        <SelectiveView/>
+                        {chart}
+                        <Timeline>
+                            {nodes}
+                        </Timeline>
+                        <TrackVisibility once>
+                            <Expandable orientation='left'/>
+                        </TrackVisibility>
+                        <TrackVisibility once>
+                            <Expandable orientation='right'/>
+                        </TrackVisibility>
+                        <TrackVisibility once>
+                            <Expandable orientation='left'/>
+                        </TrackVisibility>
+                        <Footer/>
+                    </div>
+                </CSSTransition>
             </MousePositionContext.Provider>
         </div>
     );

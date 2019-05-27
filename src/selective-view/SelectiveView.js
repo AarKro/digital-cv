@@ -13,14 +13,12 @@ export const SelectiveView = (props) => {
                 <TrackVisibility once partialVisibility>
                     <SelectiveViewButton active={activeView === "1"} setActiveView={setActiveView} viewId="1"/>
                     <SelectiveViewButton active={activeView === "2"} setActiveView={setActiveView} viewId="2"/>
-                    <SelectiveViewButton active={activeView === "3"} setActiveView={setActiveView} viewId="3"/>
                 </TrackVisibility>
             </div>
             <div className="selective-view-panel-container">
                 <TrackVisibility once>
                     <SelectiveViewPanel active={activeView === "1"}/>
                     <SelectiveViewPanel active={activeView === "2"}/>
-                    <SelectiveViewPanel active={activeView === "3"}/>
                 </TrackVisibility>
             </div>
         </div>

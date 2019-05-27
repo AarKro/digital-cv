@@ -1,0 +1,92 @@
+.expandable {
+    height: 200px;
+    margin: 20px;
+}
+
+.expandable-master {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    z-index: 2;
+    position: relative;
+    transform: translateX(100px);
+}
+
+.expandable-detail-right {
+    border-radius: 0 25px 25px 0;
+    height: 100px;
+    background-color: green;
+    transform: translate(140px, -180px);
+    z-index: 1;
+    padding: 30px 30px 30px 80px;
+    position: relative;
+    width: 0;
+}
+
+.expandable-detail-left {
+    border-radius: 25px 0 0 25px;
+    height: 100px;
+    background-color: green;
+    transform: translate(140px, -180px);
+    z-index: 1;
+    padding: 30px 80px 30px 30px;
+    position: relative;
+    width: 0;
+}
+
+.expandable-detail-content {
+    opacity: 0;
+}
+
+.expandable-master-animation-left-enter {
+    transform: translateX(100px);
+}
+
+.expandable-master-animation-left-enter-active {
+    transform: translateX(490px);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.expandable-master-animation-left-enter-done {
+    transform: translateX(490px);
+}
+
+.expandable-master-animation-right-enter {
+    transform: translateX(100px);
+}
+
+.expandable-master-animation-right-enter-active {
+    transform: translateX(0);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.expandable-master-animation-right-enter-done {
+    transform: translateX(0);
+}
+
+.expandable-detail-animation-enter {
+    width: 0;
+}
+
+.expandable-detail-animation-enter-active {
+    width: 300px;
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.expandable-detail-animation-enter-done {
+    width: 300px;
+}
+
+.expandable-detail-content-animation-enter {
+    opacity: 0;
+}
+
+.expandable-detail-content-animation-enter-active {
+    opacity: 1;
+    transition: all 200ms cubic-bezier(.31, .72, .22, .88);
+}
+
+.expandable-detail-content-animation-enter-done {
+    opacity: 1;
+}

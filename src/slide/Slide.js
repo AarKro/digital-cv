@@ -81,30 +81,25 @@ export const Slide = (props) => {
                 <Header />
                 <CSSTransition in={props.showContent} timeout={200} classNames='slide-content-animation'>
                     <div className='slide-content'>
-                        <h2>Work Experience</h2>
-                        <Panel alternation="odd">
+                        <Panel title="Work Experience">
                             <Timeline>
                                 {nodes}
                             </Timeline>
                         </Panel>
-                        <h2>IT Skills</h2>
-                        <Panel alternation="even">
+                        <Panel title="IT Skills">
                             <SelectiveView/>
                         </Panel>
-                        <h2>Language Proficiency</h2>
-                        <Panel alternation="odd">
+                        <Panel title="Language Proficiency">
                             <TrackVisibility once>
                                 <LanguageChart/>
                             </TrackVisibility>
                         </Panel>
-                        <h2>Education</h2>
-                        <Panel alternation="even">
+                        <Panel title="Education">
                             <Timeline>
                                 {nodes}
                             </Timeline>
                         </Panel>
-                        <h2>Private Interests</h2>
-                        <Panel alternation="odd">
+                        <Panel title="Private Interests">
                             <ExpandableContainer/>
                         </Panel>
                         <Footer/>

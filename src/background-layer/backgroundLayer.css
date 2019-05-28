@@ -1,0 +1,63 @@
+.background-layer-1 {
+    position: fixed;
+    z-index: 8;
+    width: 150%;
+    height: 20vh;
+    background-color: #242d51;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-2 {
+    position: fixed;
+    z-index: 7;
+    width: 150%;
+    height: 40vh;
+    background-color: #2a345e;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-3 {
+    position: fixed;
+    z-index: 6;
+    width: 150%;
+    height: 60vh;
+    background-color: #303c6c;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-4 {
+    position: fixed;
+    z-index: 5;
+    width: 150%;
+    height: 80vh;
+    background-color: #36447a;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-5 {
+    position: fixed;
+    z-index: 4;
+    width: 150%;
+    height: 100vh;
+    background-color: #3c4b87;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-6 {
+    position: fixed;
+    z-index: 3;
+    width: 150%;
+    height: 120vh;
+    background-color: #425395;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-7 {
+    position: fixed;
+    z-index: 2;
+    width: 150%;
+    height: 140vh;
+    background-color: #485aa2;
+    transform: translateX(-50px) rotate(45deg);
+}
+.background-layer-8 {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: #4e62b0;
+}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Slide } from './slide/Slide';
+import { LoginForm } from './login-form/LoginForm';
+import { BackgroundLayer } from './background-layer/BackgroundLayer';
+import { Panel } from './panel/Panel';
 import CSSTransition from 'react-transition-group/CSSTransition';
-import {Slide} from './slide/Slide';
-import {LoginForm} from './login-form/LoginForm';
-import {Tile} from './tile/Tile';
 import base64 from 'base-64';
 import './app.css';
 
@@ -18,14 +19,13 @@ export const App = (props) => {
         })
     }
 
-    const loginForm = <LoginForm validateInput={validateInput}/>;
-    
     return (
         <React.Fragment>
             <div className={!transition ? "app" : "app block-scroll"}>
-                <Tile content={loginForm}/>
-                <Tile/>
-                <Tile/>
+                <BackgroundLayer/>
+                <Panel login={true}>
+                    <LoginForm validateInput={validateInput}/>
+                </Panel>
             </div>
             <CSSTransition
                 in={transition}

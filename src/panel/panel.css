@@ -1,15 +1,24 @@
-.panel-odd {
-    width: 100%;
-    background: #379683;
+.panel {
+    width: 80%;
+    background: #FBE8A6;
     padding-top: 15px;
     padding-bottom: 15px;
     box-shadow: 5px 5px 5px #0004;
+    margin: -70px auto 110px;
+    z-index: 10;
 }
 
-.panel-even {
-    width: 100%;
-    background-color: #5CDB95;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.panel-login {
+    width: 600px;
+    height: 400px;
+    background: #9faad4;
     box-shadow: 5px 5px 5px #0004;
+    margin: auto;
+    z-index: 10;
+}
+
+.panel h2, .panel-login h2 {
+    margin-left: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #303C6C;
 }

@@ -15,34 +15,38 @@
 
 .expandable-master {
     border-radius: 100%;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background-color: blue;
     z-index: 2;
     position: relative;
-    transform: translateX(100px);
+    transform: translateX(75px);
 }
 
 .expandable-detail-right {
     border-radius: 0 25px 25px 0;
-    height: 100px;
+    height: 120px;
     background-color: green;
-    transform: translate(140px, -180px);
+    transform: translate(150px, -200px);
     z-index: 1;
     padding: 30px 30px 30px 80px;
     position: relative;
     width: 0;
+    background-color: #F9DB75;
+    box-shadow: 5px 5px 5px #0004;
 }
 
 .expandable-detail-left {
     border-radius: 25px 0 0 25px;
-    height: 100px;
+    height: 120px;
     background-color: green;
-    transform: translate(140px, -180px);
+    transform: translate(100px, -200px);
     z-index: 1;
     padding: 30px 80px 30px 30px;
     position: relative;
     width: 0;
+    background-color: #F9DB75;
+    box-shadow: 5px 5px 5px #0004;
 }
 
 .expandable-detail-content {
@@ -50,7 +54,7 @@
 }
 
 .expandable-master-animation-left-enter {
-    transform: translateX(100px);
+    transform: translateX(75px);
 }
 
 .expandable-master-animation-left-enter-active {
@@ -63,7 +67,7 @@
 }
 
 .expandable-master-animation-right-enter {
-    transform: translateX(100px);
+    transform: translateX(75px);
 }
 
 .expandable-master-animation-right-enter-active {
@@ -80,12 +84,12 @@
 }
 
 .expandable-detail-animation-enter-active {
-    width: 300px;
+    width: 350px;
     transition: all 400ms cubic-bezier(.31, .72, .22, .88);
 }
 
 .expandable-detail-animation-enter-done {
-    width: 300px;
+    width: 350px;
 }
 
 .expandable-detail-content-animation-enter {

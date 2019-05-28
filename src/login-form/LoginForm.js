@@ -9,21 +9,33 @@ export const LoginForm = (props) => {
     const validateInput = () => props.validateInput(value);
 
     return (
-        <div className="login-form">
-            <input
-                className="login-input"
-                type="password"
-                onChange={handleInput}
-                value={value}
-            />
-            <button
-                className="login-button"
-                onMouseUp={validateInput}
-            >
-                <div>
-                    &#x279c;
-                </div>
-            </button>
-        </div>
+        <React.Fragment>
+            <div className='login-title'>
+                Digital CV
+                <br/>
+                <span className='login-title-name'>
+                    Aaron Kromer
+                </span>
+            </div>
+            <div className='login-label'>
+                Enter Password:
+            </div>
+            <div className="login-form">
+                <input
+                    className="login-input"
+                    type="password"
+                    onChange={handleInput}
+                    value={value}
+                    />
+                <button
+                    className="login-button"
+                    onMouseUp={validateInput}
+                    >
+                    <div>
+                        &#x279c;
+                    </div>
+                </button>
+            </div>
+        </React.Fragment>
     );
 }

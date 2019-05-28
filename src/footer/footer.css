@@ -3,7 +3,7 @@
     vertical-align: bottom;
     width: 100%;
     height: 300px;
-    background: #05386B;
+    background: #303C6C;
 }
 
 .footer-table {
@@ -13,10 +13,10 @@
 
 .footer-table td {
     padding: 5px 100px 5px 100px;
-    color: #379683;
+    color: #B4DFE5;
 }
 
 .footer-table td:hover {
-    color: #EDF5E1;
+    color: #D2FDFF;
     transition: all 200ms;
 }

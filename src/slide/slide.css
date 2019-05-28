@@ -1,11 +1,7 @@
 .slide-wrapper {
     position: absolute;
-    z-index: 5;
+    z-index: 11;
     width: 100vw;
-    background: #8EE4AF;
+    background: #F4976C;
     transform: translate(-100%);
-}
-
-.slide-wrapper h2 {
-    margin-left: 10%;
 }

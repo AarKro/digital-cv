@@ -7,7 +7,11 @@ export const Header = (props) => {
         <div className="header">
             <div className="header-content">
                 <div className="header-title">
-                    Test Title Digital-CV
+                    Digital CV
+                    <br/>
+                    <span className="header-title-name">
+                        Aaron Kromer
+                    </span>
                 </div>
                 <img alt="" src={require("../assets/img/BewerbungsBild.jpg")} className="header-img"/>
             </div>

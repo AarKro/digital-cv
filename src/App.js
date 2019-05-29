@@ -10,12 +10,13 @@ import './app.css';
 export const App = (props) => {
     const [transition, setTransition] = useState(false);
 
-    const validateInput = (value) => {
+    const validateInput = (value, shaking) => {
         fetch("./digital-cv-1.0-SNAPSHOT/digitalcv/content", {
             method:'GET',
             headers: {'Authorization': 'Basic ' + base64.encode('digital-cv-frontend:' + value)}
         }).then((response) => {
             if(response.status === 200) setTransition(true)
+            else shaking();
         })
     }
 

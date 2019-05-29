@@ -3,10 +3,16 @@ import './loginForm.css';
 
 export const LoginForm = (props) => {
     const [value, setValue] = useState("");
+    const [shake, setShake] = useState(false);
 
     const handleInput = (e) => setValue(e.target.value);
 
-    const validateInput = () => props.validateInput(value);
+    const validateInput = () => props.validateInput(value, shaking);
+
+    const shaking = () => {
+        setShake(true)
+        setTimeout(() => setShake(false), 300);
+    }
 
     return (
         <React.Fragment>

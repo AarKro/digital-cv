@@ -21,7 +21,7 @@ export const App = (props) => {
 
     return (
         <React.Fragment>
-            <div className={!transition ? "app" : "app block-scroll"}>
+            <div className={transition ? "app" : "app block-scroll"}>
                 <BackgroundLayer/>
                 <Panel login={true}>
                     <LoginForm validateInput={validateInput}/>
@@ -32,7 +32,9 @@ export const App = (props) => {
                 timeout={1000}
                 classNames="mouse-down"
             >
-                <Slide showContent={transition} />
+                <React.Fragment>
+                    {transition && <Slide showContent={transition} />}
+                </React.Fragment>
             </CSSTransition>
         </React.Fragment>
     );

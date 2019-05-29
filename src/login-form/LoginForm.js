@@ -26,7 +26,7 @@ export const LoginForm = (props) => {
             <div className='login-label'>
                 Enter Password:
             </div>
-            <div className="login-form">
+            <div className={shake ? "login-form login-form-animation" : "login-form"}>
                 <input
                     className="login-input"
                     type="password"

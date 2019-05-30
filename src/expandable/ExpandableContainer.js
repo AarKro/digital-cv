@@ -6,13 +6,13 @@ export const ExpandableContainer = (props) => {
     return (
         <div className="expandable-container">
             <TrackVisibility once>
-                <Expandable orientation='left'/>
+                <Expandable img="music" orientation='left'/>
             </TrackVisibility>
             <TrackVisibility once>
-                <Expandable orientation='right'/>
+                <Expandable img="controller" orientation='right'/>
             </TrackVisibility>
             <TrackVisibility once>
-                <Expandable orientation='left'/>
+                <Expandable img="controller" orientation='left'/>
             </TrackVisibility>
         </div>
     );

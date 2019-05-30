@@ -22,7 +22,7 @@
     border-radius: 200px;
     border: none;
     outline: none;
-    background-color: #3a89c8;
+    background-color: #303C6C;
     box-shadow: 2px 2px 2px #7e8184;
     cursor: pointer;
 }
@@ -30,8 +30,7 @@
 .selective-view-panel-container {
     flex: 1;
     padding: 50px;
-    border-left: 5px solid #3a89c8;
-    border-bottom: 5px solid #3a89c8;
+    border-left: 5px solid #303C6C;
     border-radius: 10px 0 10px 10px;
 }
 
@@ -40,6 +39,14 @@
     display: inline-block;
     opacity: 0;
     transform: translateY(-200px);
+}
+
+.selective-view-button-img {
+    border-radius: 100%;
+    background: #FBE8A6;
+    transform: scale(0.9);
+    margin-left: -4px;
+    margin-top: 1px;
 }
 
 .selective-view-panel-animation-enter {

@@ -8,7 +8,9 @@ export const SelectiveViewButton = (props) => {
 
     return (
         <CSSTransition in={animateButton} timeout={400} classNames="selective-view-button-animation">
-            <button className="selective-view-button" onClick={() => props.setActiveView(props.viewId)}>Button</button>
+            <button className="selective-view-button" onClick={() => props.setActiveView(props.viewId)}>
+                <img alt={props.img} src={require("../assets/img/" + props.img + ".png")} className="selective-view-button-img"/>
+            </button>
         </CSSTransition>
     );
 }

@@ -1,33 +1,33 @@
 .timeline {
-    margin: 50px 20% 50px 30%;
+    margin: 50px 10% 50px 20%;
 }
 
 .timeline-node {
     margin: 0 30px 0 30px;
     padding: 15px;
-    border-left: 5px solid #3a89c8;
+    border-left: 5px solid #303C6C;
 }
 
 .timeline-node-start {
     display: block;
     width: 30px;
     height: 30px;
-    border: 5px solid #3a89c8;
+    border: 5px solid #303C6C;
     border-radius: 30px;
     margin: -15px 0 0 -37px;
-    background: #3a89c8;
+    background: #303C6C;
 }
 
 .timeline-node-end {
     margin: 0 30px 0 30px;
-    border-left: 5px solid #3a89c8;
+    border-left: 5px solid #303C6C;
 }
 
 .timeline-node-knot {
     display: block;
     width: 5px;
     height: 5px;
-    border: 5px solid #3a89c8;
+    border: 5px solid #303C6C;
     border-radius: 10px 10px 10px 10px;
     margin-left: -25px;
     background: white;
@@ -61,7 +61,6 @@
 .timeline-node-leaf {
     display: inline-block;
     margin: -24px 0 0 10px;
-    border: 1px solid #3a89c8;
     padding: 10px;
     box-shadow: 2px 2px 2px #7e8184;
     background-color: #f6f7f7;
@@ -72,7 +71,6 @@
     display: block;
     width: 10px;
     height: 10px;
-    border: solid #3a89c8;
     border-width: 1px 0 0 1px;
     background: #f6f7f7;
     transform: rotate(-45deg);

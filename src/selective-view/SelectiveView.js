@@ -17,8 +17,8 @@ export const SelectiveView = (props) => {
             </div>
             <div className="selective-view-panel-container">
                 <TrackVisibility once>
-                    <SelectiveViewPanel active={activeView === "1"}/>
-                    <SelectiveViewPanel active={activeView === "2"}/>
+                    <SelectiveViewPanel content="technologies" active={activeView === "1"}/>
+                    <SelectiveViewPanel content="tools" active={activeView === "2"}/>
                 </TrackVisibility>
             </div>
         </div>

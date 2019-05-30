@@ -4,7 +4,7 @@ import { Expandable } from './Expandable';
 
 export const ExpandableContainer = (props) => {
     return (
-        <div className="expandable-container">
+        <div className="expandable-container" style={{marginLeft: props.orientation==="left" ? "-100px" : ""}}>
             <TrackVisibility once>
                 <Expandable img="music" orientation='left'/>
             </TrackVisibility>
@@ -12,7 +12,7 @@ export const ExpandableContainer = (props) => {
                 <Expandable img="controller" orientation='right'/>
             </TrackVisibility>
             <TrackVisibility once>
-                <Expandable img="controller" orientation='left'/>
+                <Expandable img="technology" orientation='left'/>
             </TrackVisibility>
         </div>
     );

@@ -9,27 +9,26 @@ const technologies = [
     <SelectiveViewPanelItem key="TypeScript" label="TypeScript" img="ts"/>,
     <SelectiveViewPanelItem key="REACT" label="REACT" img="react"/>,
     <SelectiveViewPanelItem key="Jest" label="Jest" img="jest"/>,
-    <SelectiveViewPanelItem key="REST" label="REST" img=""/>,
+    <SelectiveViewPanelItem key="REST" label="REST" img="rest"/>,
     <SelectiveViewPanelItem key="Java" label="Java" img="java"/>,
-    <SelectiveViewPanelItem key="JSF" label="JSF" img=""/>,
-    <SelectiveViewPanelItem key="JPA" label="JPA" img=""/>,
+    <SelectiveViewPanelItem key="JSF" label="JSF" img="jsf"/>,
     <SelectiveViewPanelItem key="JUnit" label="JUnit" img="junit"/>,
-    <SelectiveViewPanelItem key="PL/1" label="PL/1" img=""/>,
-    <SelectiveViewPanelItem key="JCL" label="JCL" img=""/>,
+    <SelectiveViewPanelItem key="PL/1" label="PL/1" img="pli"/>,
+    <SelectiveViewPanelItem key="JCL" label="JCL" img="jcl"/>,
     <SelectiveViewPanelItem key="SQL" label="SQL" img="sql"/>
 ];
 
 const tools = [
-    <SelectiveViewPanelItem key="" label="Eclipse" img="eclipse"/>,
-    <SelectiveViewPanelItem key="" label="IntelliJ" img="intelliJ"/>,
-    <SelectiveViewPanelItem key="" label="VSCode" img="vscode"/>,
-    <SelectiveViewPanelItem key="" label="Atom" img="atom"/>,
-    <SelectiveViewPanelItem key="" label="Maven" img="maven"/>,
-    <SelectiveViewPanelItem key="" label="NPM" img="npm"/>,
-    <SelectiveViewPanelItem key="" label="JBoss" img="jboss"/>,
-    <SelectiveViewPanelItem key="" label="UML" img="uml"/>,
-    <SelectiveViewPanelItem key="" label="Git" img="git"/>,
-    <SelectiveViewPanelItem key="" label="Office" img="office"/>,
+    <SelectiveViewPanelItem key="Eclipse" label="Eclipse" img="eclipse"/>,
+    <SelectiveViewPanelItem key="IntelliJ" label="IntelliJ" img="intelliJ"/>,
+    <SelectiveViewPanelItem key="VSCode" label="VSCode" img="vscode"/>,
+    <SelectiveViewPanelItem key="Atom" label="Atom" img="atom"/>,
+    <SelectiveViewPanelItem key="Maven" label="Maven" img="maven"/>,
+    <SelectiveViewPanelItem key="NPM" label="NPM" img="npm"/>,
+    <SelectiveViewPanelItem key="JBoss" label="JBoss" img="jboss"/>,
+    <SelectiveViewPanelItem key="UML" label="UML" img="uml"/>,
+    <SelectiveViewPanelItem key="Git" label="Git" img="git"/>,
+    <SelectiveViewPanelItem key="Office" label="Office" img="office"/>,
 ];
 
 export const SelectiveViewPanel = (props) => {
@@ -37,7 +36,6 @@ export const SelectiveViewPanel = (props) => {
     const [content, setContent] = useState([]);
 
     useEffect(() => {
-
         setContent(props.content === "technologies" ? technologies : tools);
 
         setAnimatePanel(props.active && props.isVisible)

@@ -13,7 +13,7 @@ export const Header = (props) => {
                         Aaron Kromer
                     </span>
                 </div>
-                <img alt="" src={require("../assets/img/BewerbungsBild.jpg")} className="header-img"/>
+                <img alt="self" src={require("../assets/img/BewerbungsBild.jpg")} className="header-img"/>
             </div>
         </div>
     );

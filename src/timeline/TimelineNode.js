@@ -11,16 +11,18 @@ export const TimelineNode = (props) => {
 
     const startKnotTagAnimation = () => setAnimateKnotTag(true);
 
+    const isFollowup = props.noTag ? "hidden" : "visible";
+
     return (
         <div className="timeline-node">
             <CSSTransition in={animateLeaf} timeout={400} classNames="timeline-node-leaf-animation" onEntered={startKnotTagAnimation}>
                 <div className="timeline-node-leaf-animation-preset">
                     <CSSTransition in={animateKnotTag} timeout={400} classNames="timeline-node-knot-tag-animation">
-                        <span className="timeline-node-knot-tag">{props.date}</span>
+                        <span style={{visibility: isFollowup}} className="timeline-node-knot-tag">{props.date}</span>
                     </CSSTransition>
-                    <span className="timeline-node-knot"/>
+                    <span style={{visibility: isFollowup}} className="timeline-node-knot"/>
                     <div className="timeline-node-leaf">
-                        <span className="timeline-node-leaf-knot"/>
+                        <span style={{visibility: isFollowup}} className="timeline-node-leaf-knot"/>
                         <div className="timeline-node-leaf-title">{props.title}</div>
                         <div className="timeline-node-leaf-content" dangerouslySetInnerHTML={{__html: props.content}}/>
                     </div>

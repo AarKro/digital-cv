@@ -64,6 +64,7 @@
     padding: 10px;
     box-shadow: 2px 2px 2px #7e8184;
     background-color: #f6f7f7;
+    border: 1px solid #303C6C;
 }
 
 .timeline-node-leaf-knot {
@@ -72,6 +73,8 @@
     width: 10px;
     height: 10px;
     border-width: 1px 0 0 1px;
+    border-top: 1px solid #303C6C;
+    border-left: 1px solid #303C6C;
     background: #f6f7f7;
     transform: rotate(-45deg);
 }

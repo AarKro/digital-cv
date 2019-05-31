@@ -4,10 +4,8 @@ import { Timeline } from "../timeline/Timeline";
 import { SelectiveView } from "../selective-view/SelectiveView";
 import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header"
-import { ReactiveCircleContainer } from '../reactive-circle/ReactiveCircleContainer';
 import { MousePositionContext } from '../context/MousePositionContext';
 import { LanguageChart } from '../language-chart/LanguageChart';
-import { Expandable } from '../expandable/Expandable';
 import { ExpandableContainer } from '../expandable/ExpandableContainer';
 import { CSSTransition } from 'react-transition-group';
 import { Panel } from '../panel/Panel';
@@ -60,19 +58,26 @@ const nodeContents = [
 ];
 
 export const Slide = (props) => {
-    const [nodes, setNodes] = useState([]);
+    const [workNodes, setWorkNodes] = useState([]);
+    const [educationNodes, setEducationNodes] = useState([]);
     const [x, setX] = useState(0);
     const [y, setY] = useState(0);
 
     useEffect(() => {
-        if (props.showContent && nodes.length === 0) {
+        if (props.showContent && workNodes.length === 0) {
             let index = 0;
-            const nodes = nodeContents.map((node) => {
+            const tmpWorkNodes = props.data.work.map((node) => {
                 index++;
                 return <TimelineNode key={index} title={node.title} date={node.date} content={node.content} noTag={node.noTag} />
             })
-
-            setTimeout(() => setNodes(nodes), 100);
+            
+            index = 0;
+            const tmpEducationNodes = props.data.education.map((node) => {
+                index++;
+                return <TimelineNode key={index} title={node.title} date={node.date} content={node.content} noTag={node.noTag} />
+            })
+            
+            setTimeout(() => {setWorkNodes(tmpWorkNodes); setEducationNodes(tmpEducationNodes)}, 100);
         }
     });
 
@@ -90,7 +95,7 @@ export const Slide = (props) => {
                     <div className='slide-content'>
                         <Panel title="Work Experience">
                             <Timeline>
-                                {nodes}
+                                {workNodes}
                             </Timeline>
                         </Panel>
                         <Panel title="IT Skills">
@@ -103,13 +108,13 @@ export const Slide = (props) => {
                         </Panel>
                         <Panel title="Education">
                             <Timeline>
-                                {nodes}
+                                {educationNodes}
                             </Timeline>
                         </Panel>
                         <Panel title="Private Interests">
                             <ExpandableContainer/>
                         </Panel>
-                        <Footer/>
+                        <Footer data={props.data.footer}/>
                     </div>
                 </CSSTransition>
             </MousePositionContext.Provider>

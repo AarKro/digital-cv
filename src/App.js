@@ -9,13 +9,19 @@ import './app.css';
 
 export const App = (props) => {
     const [transition, setTransition] = useState(false);
+    const [data, setData] = useState({});
 
     const validateInput = (value, shaking) => {
         fetch("./digital-cv-1.0-SNAPSHOT/digitalcv/content", {
             method:'GET',
             headers: {'Authorization': 'Basic ' + base64.encode('digital-cv-frontend:' + value)}
         }).then((response) => {
-            if(response.status === 200) setTransition(true)
+            if(response.status === 200) {
+                response.json().then((json) => {
+                    setData(json);
+                    setTransition(true)
+                });
+            }
             else shaking();
         })
     }
@@ -34,7 +40,7 @@ export const App = (props) => {
                 classNames="mouse-down"
             >
                 <React.Fragment>
-                    {transition && <Slide showContent={transition} />}
+                    {transition && <Slide showContent={transition} data={data}/>}
                 </React.Fragment>
             </CSSTransition>
         </React.Fragment>

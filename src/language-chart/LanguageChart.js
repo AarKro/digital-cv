@@ -5,15 +5,17 @@ import './languageChart.css';
 const data = {
     datasets: [{
         data: [
-            10,8.5,4
+            10,10,8.5,4
         ],
         backgroundColor: [
             "#FF6384",
             "#FFCE56",
-            "#36A2EB"
+            "#36A2EB",
+            "#84FF63"
         ],
     }],
     labels: [
+        "Swissgerman: Native Language",
         "German: Native Language",
         "English: Fluent, First C1 (CEFR)",
         "French: Conversational Level"

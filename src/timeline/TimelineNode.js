@@ -14,11 +14,11 @@ export const TimelineNode = (props) => {
     const isFollowup = props.noTag ? "hidden" : "visible";
 
     return (
-        <div className="timeline-node">
+        <div className="timeline-node" style={{marginTop: props.noTag ? "-25px" : ""}}>
             <CSSTransition in={animateLeaf} timeout={400} classNames="timeline-node-leaf-animation" onEntered={startKnotTagAnimation}>
                 <div className="timeline-node-leaf-animation-preset">
                     <CSSTransition in={animateKnotTag} timeout={400} classNames="timeline-node-knot-tag-animation">
-                        <span style={{visibility: isFollowup}} className="timeline-node-knot-tag">{props.date}</span>
+                        <span style={{visibility: isFollowup, marginLeft: props.date.includes("Today") ? "-150px" : "-140px"}} className="timeline-node-knot-tag">{props.date}</span>
                     </CSSTransition>
                     <span style={{visibility: isFollowup}} className="timeline-node-knot"/>
                     <div className="timeline-node-leaf">

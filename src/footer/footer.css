@@ -11,12 +11,16 @@
     margin: 90px auto;
 }
 
+.footer-table tr {
+    color: #a1d7de;
+}
+
 .footer-table td {
     padding: 5px 100px 5px 100px;
     color: #B4DFE5;
 }
 
 .footer-table td:hover {
-    color: #D2FDFF;
+    color: #EDF5E1;
     transition: all 200ms;
 }

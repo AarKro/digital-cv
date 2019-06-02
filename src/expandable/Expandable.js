@@ -14,10 +14,8 @@ export const Expandable = (props) => {
             </CSSTransition>
             <CSSTransition in={props.isVisible} timeout={400} classNames="expandable-detail-animation" onEntered={() => setTextAppear(true)}>
                 <div className={"expandable-detail-" + props.orientation}>
-                    <CSSTransition in={textAppear} timeout={200} classNames="expandable-detail-content-animation">
-                        <span className="expandable-detail-content">
-                            {props.detail}
-                        </span>
+                    <CSSTransition in={textAppear} timeout={400} classNames="expandable-detail-content-animation">
+                        <span className="expandable-detail-content" dangerouslySetInnerHTML={{__html: props.detail}}/>
                     </CSSTransition>
                 </div>
             </CSSTransition>

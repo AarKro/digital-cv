@@ -26,7 +26,7 @@
 }
 
 .expandable-master-img {
-    background: #FBE8A6;
+    background: #f0dee2;
     border-radius: 100%;
     width: 188px;
     height: 188px;
@@ -37,31 +37,33 @@
 .expandable-detail-right {
     border-radius: 0 25px 25px 0;
     height: 120px;
-    background-color: green;
     transform: translate(150px, -200px);
     z-index: 1;
     padding: 30px 30px 30px 80px;
     position: relative;
     width: 0;
-    background-color: #F9DB75;
+    background-color: #d9a9b2;
     box-shadow: 5px 5px 5px #0004;
 }
 
 .expandable-detail-left {
     border-radius: 25px 0 0 25px;
     height: 120px;
-    background-color: green;
     transform: translate(100px, -200px);
     z-index: 1;
     padding: 30px 80px 30px 30px;
     position: relative;
     width: 0;
-    background-color: #F9DB75;
+    background-color: #d9a9b2;
     box-shadow: 5px 5px 5px #0004;
 }
 
 .expandable-detail-content {
     opacity: 0;
+    display: inline-block;
+    padding-top: 45px;
+    color: #303C6C;
+    font-weight: bold;
 }
 
 .expandable-master-animation-left-enter {
@@ -109,7 +111,7 @@
 
 .expandable-detail-content-animation-enter-active {
     opacity: 1;
-    transition: all 200ms cubic-bezier(.31, .72, .22, .88);
+    transition: all 400ms cubic-bezier(.31, .72, .22, .88);
 }
 
 .expandable-detail-content-animation-enter-done {

@@ -1,9 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './loginForm.css';
 
 export const LoginForm = (props) => {
     const [value, setValue] = useState("");
     const [shake, setShake] = useState(false);
+
+    useEffect(() => {
+        document.addEventListener("keypress", keypressMethod);
+
+        return () => document.removeEventListener("keypress", keypressMethod); 
+    })
+
+    const keypressMethod = (e) => {
+        if(e.keyCode === 13 && !props.transition) validateInput();
+    }
 
     const handleInput = (e) => setValue(e.target.value);
 

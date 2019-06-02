@@ -31,7 +31,7 @@ export const App = (props) => {
             <div className={transition ? "app" : "app block-scroll"}>
                 <BackgroundLayer/>
                 <Panel login={true}>
-                    <LoginForm validateInput={validateInput}/>
+                    <LoginForm transition={transition} validateInput={validateInput}/>
                 </Panel>
             </div>
             <CSSTransition

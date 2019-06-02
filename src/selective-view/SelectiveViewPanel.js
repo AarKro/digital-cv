@@ -29,6 +29,8 @@ const tools = [
     <SelectiveViewPanelItem key="UML" label="UML" img="uml"/>,
     <SelectiveViewPanelItem key="Git" label="Git" img="git"/>,
     <SelectiveViewPanelItem key="Office" label="Office" img="office"/>,
+    <SelectiveViewPanelItem key="Jira" label="Jira" img="jira"/>,
+    <SelectiveViewPanelItem key="Confluence" label="Confluence" img="confluence"/>
 ];
 
 export const SelectiveViewPanel = (props) => {

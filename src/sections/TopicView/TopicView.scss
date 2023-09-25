@@ -1,0 +1,16 @@
+@import "../../helpers.scss";
+
+.grid {
+  flex: 1 1 auto;
+  margin: 0 auto;
+  max-width: 855px;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  
+  @media (max-width: $breakpoint-md) {
+    max-width: 415px;
+    grid-template-columns: 1fr;
+  }
+}

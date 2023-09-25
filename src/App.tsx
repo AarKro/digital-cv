@@ -1,7 +1,10 @@
+import { TopicView } from './sections/TopicView/TopicView'
 import './App.scss'
 
 export const App = () => {
   return (
-    <div>Test</div>
+    <div className="app">
+      <TopicView/>
+    </div>
   )
 }

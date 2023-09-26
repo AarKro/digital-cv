@@ -8,7 +8,7 @@ interface Props {
 
 export const TopicView: FC<Props> = () => {
   return (
-    <div className="grid">
+    <div className="topic-view">
       <TopicBox/>
       <TopicBox/>
       <TopicBox/>

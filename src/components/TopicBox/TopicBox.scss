@@ -2,12 +2,14 @@
 
 .container {
   cursor: pointer;
-  height: 365px;
-  width: 415px;
+  min-height: 365px;
+  min-width: 415px;
+  margin: 10px;
 
-  @media (max-width: $breakpoint-xs) {
-    height: 321px;
-    width: 365px;
+  @media (max-width: $breakpoint-md) {
+    min-height: 304px;
+    min-width: 345px;
+    margin: 5px;
   }
 
   & .title-box, & .content-box {
@@ -21,9 +23,9 @@
     z-index: 1;
     transition: .5s;
 
-    @media (max-width: $breakpoint-xs) {
-      height: 306px;
-      width: 350px;
+    @media (max-width: $breakpoint-md) {
+      height: 289px;
+      width: 330px;
     }
 
     &.active {

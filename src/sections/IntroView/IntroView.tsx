@@ -1,12 +1,15 @@
-import { FC, useState } from "react"
+import { FC } from "react"
 import { TypeAnimation } from "react-type-animation"
 import './IntroView.scss';
 
 const TYPE_WRITER_SPEED = 30;
 const TYPE_WRITER_STYLE: React.CSSProperties = { display: 'inline-block', fontFamily: 'IBM Plex Mono, monospace', fontWeight: 700, whiteSpace: 'pre-line'};
 
-export const IntroView: FC = () => {
-  const [animationFinished, setAnimationFinished] = useState<boolean>(false);
+interface Props {
+  setAnimationFinished: (value: boolean) => void;
+}
+
+export const IntroView: FC<Props> = ({ setAnimationFinished }) => {
   return (
     <section className="intro-view">
       <div className="animation-wrapper">

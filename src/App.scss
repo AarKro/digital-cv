@@ -8,8 +8,7 @@
 
 body {
   margin: 0;
-  background: rgb(186,67,109);
-  background: linear-gradient(31deg, rgba(186,67,109,1) 0%, rgba(217,206,105,1) 100%);
+  background-image: url('./assets/sprinkle.svg'), linear-gradient(31deg, rgba(186,67,109,1) 0%, rgba(217,206,105,1) 100%);
   height: 200vh;
   overflow: hidden;
 }

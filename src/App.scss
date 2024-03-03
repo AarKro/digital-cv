@@ -1,8 +1,19 @@
+@import "./helpers.scss";
+
 * {
   box-sizing: border-box;
   position: relative;
 }
 
 .app {
-  width: 100%;
+  width: calc($breakpoint-xxl - 10px);
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-xxl) {
+    width: calc($breakpoint-xl - 10px);
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    width: 100%;
+  }
 }

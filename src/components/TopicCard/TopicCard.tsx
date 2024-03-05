@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import './TopicCard.scss';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 interface Props {
 
@@ -8,9 +9,11 @@ interface Props {
 export const TopicCard: FC<Props> = () => {
   return (
     <div className='topic-card--container'>
-      <article className='topic-card'>
-        Topic
-      </article>
+      <FadeIn delay={200}>
+        <article className='topic-card'>
+          Topic
+        </article>
+      </FadeIn>
     </div>
   );
 }

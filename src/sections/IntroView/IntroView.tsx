@@ -17,15 +17,15 @@ export const IntroView: FC<Props> = ({ isIntroFinished, setAnimationFinished }) 
         <div className="type-animation">
           <TypeAnimation
             sequence={[
-              1000,
+              800,
               'Hi.👋',
-              1000,
+              800,
               'Hi.👋 I\'m Aaron.',
-              1000,
+              800,
               'Hi.👋 I\'m Aaron.\nWelcome',
               200,
               'Hi.👋 I\'m Aaron.\nWelcome to my Portfolio!',
-              1000,
+              600,
               () => setAnimationFinished(true)
             ]}
             speed={TYPE_WRITER_SPEED}

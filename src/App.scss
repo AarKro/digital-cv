@@ -9,14 +9,11 @@
 body {
   margin: 0;
   background-image: url('./assets/sprinkle.svg'), linear-gradient(31deg, rgba(186,67,109,1) 0%, rgba(217,206,105,1) 100%);
-  height: 200vh;
-  overflow: hidden;
 }
 
 .app {
   width: calc($breakpoint-xxl - 10px);
   margin: 0 auto;
-  height: 100vh;
 
   @media (max-width: $breakpoint-xxl) {
     width: calc($breakpoint-xl - 10px);

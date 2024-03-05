@@ -1,37 +1,24 @@
 import { useEffect, useState } from 'react';
 import { IntroView } from './sections/IntroView/IntroView'
+import { TopicView } from './sections/TopicView/TopicView';
 import './App.scss'
-
-const scrollToBottom = () => {
-  window.scrollTo({
-    left: 0,
-    top: document.body.scrollHeight,
-    behavior: 'smooth',
-  });
-}
-
-const scrollToTop = () => {
-  const el = document.getElementById('top');
-  el?.scrollIntoView({behavior: 'smooth'});
-}
 
 export const App = () => {
   const [introFinished, setIntroFinished] = useState<boolean>(false);
-
-  useEffect(() => {
-    scrollToTop();
-  })
+  const [hideIntro, setHideIntro] = useState<boolean>(false);
 
   useEffect(() => {
     if (introFinished) {
-      scrollToBottom();
+      setTimeout(() => setHideIntro(true), 700);
     }
   }, [introFinished]);
 
   return (
-    <div className="app">
-      <span id="top"/>
-      <IntroView setAnimationFinished={setIntroFinished}/>
+    <div className='app'>
+      {!hideIntro 
+        ? <IntroView isIntroFinished={introFinished} setAnimationFinished={setIntroFinished}/>
+        : <TopicView />
+      }
     </div>
   )
 }

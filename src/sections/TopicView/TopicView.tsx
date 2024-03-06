@@ -12,12 +12,11 @@ export const TopicView: FC<Props> = ({ }) => {
     <section className='topic-view'>
       <FadeIn>
         <Header/>
-        </FadeIn>
-        <div className='view'>
-          <TopicCard/>
-          <TopicCard/>
-        </div>
-      
+      </FadeIn>
+      <div className='view'>
+        <TopicCard/>
+        <TopicCard/>
+      </div>
     </section>
   )
 }

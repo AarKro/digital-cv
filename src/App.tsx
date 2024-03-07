@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { IntroView } from './sections/IntroView/IntroView'
 import { TopicView } from './sections/TopicView/TopicView';
 import './App.scss'
+import { Background } from './components/Background/Background';
 
 export const App = () => {
   const [introFinished, setIntroFinished] = useState<boolean>(false);
@@ -14,11 +15,14 @@ export const App = () => {
   }, [introFinished]);
 
   return (
-    <div className='app'>
-      {!hideIntro 
-        ? <IntroView isIntroFinished={introFinished} setAnimationFinished={setIntroFinished}/>
-        : <TopicView />
-      }
-    </div>
+    <article className='app__wrapper'>
+      <Background animate={introFinished}/>
+      <div className='app'>
+        {!hideIntro 
+          ? <IntroView isIntroFinished={introFinished} setAnimationFinished={setIntroFinished}/>
+          : <TopicView />
+        }
+      </div>
+    </article>
   )
 }

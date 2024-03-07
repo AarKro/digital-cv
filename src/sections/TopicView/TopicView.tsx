@@ -14,8 +14,8 @@ export const TopicView: FC<Props> = ({ }) => {
         <Header/>
       </FadeIn>
       <div className='view'>
-        <TopicCard/>
-        <TopicCard/>
+        <TopicCard name='topic 1' modalContent={<div>content 1</div>}/>
+        <TopicCard name='topic 2' modalContent={<div>content 2</div>}/>
       </div>
     </section>
   )

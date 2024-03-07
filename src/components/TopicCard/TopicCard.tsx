@@ -1,13 +1,14 @@
-import { FC, useState } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import { TopicModal } from '../TopicModal/TopicModal';
 import './TopicCard.scss';
 
 interface Props {
-
+  name: string;
+  modalContent: React.ReactNode;
 }
 
-export const TopicCard: FC<Props> = () => {
+export const TopicCard: FC<PropsWithChildren<Props>> = ({ children, modalContent, name }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleModal = (event: React.MouseEvent) => {
@@ -20,10 +21,11 @@ export const TopicCard: FC<Props> = () => {
       <FadeIn delay={200}>
         <article className='topic-card' onClick={toggleModal}>
           <div className='topic-card__content'>
+            {children}
           </div>
         </article>
       </FadeIn>
-      <TopicModal isOpen={open} toggleModal={toggleModal}/>
+      <TopicModal title={name} isOpen={open} toggleModal={toggleModal} content={modalContent}/>
     </div>
   );
 }

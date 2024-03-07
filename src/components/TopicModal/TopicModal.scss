@@ -1,3 +1,5 @@
+@import "../../helpers.scss";
+
 .topic-modal {
   position: fixed;
   top: 0;
@@ -7,7 +9,7 @@
   background-color: red;
   display: block;
   border: none;
-  padding: 0;
+  padding: 0 25px;
   margin: 0;
   opacity: 0;
   pointer-events: none;
@@ -19,5 +21,41 @@
     pointer-events: all;
     opacity: 1;
     transform: translateY(0);
+  }
+
+  &__content {
+    margin: 0 auto;
+    overflow: auto;
+    width: calc($breakpoint-xxl - 10px);
+
+    @media (max-width: $breakpoint-xxl) {
+      width: calc($breakpoint-xl - 10px);
+    }
+
+    @media (max-width: $breakpoint-xl) {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    &-close-button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+  
+      & > svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &-title {
+      flex: 1;
+    }
   }
 }

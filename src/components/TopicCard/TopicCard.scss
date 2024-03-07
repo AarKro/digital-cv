@@ -9,9 +9,11 @@
   .topic-card {
     width: 325px;
     height: 400px;
-    border: thin solid black;
     margin: 10px auto;
     transition: all ease .2s;
+    background-color: #CFA36A;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
 
     @media (max-width: $breakpoint-sm) {
       width: 175px;
@@ -19,7 +21,13 @@
     }
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    &__content {
+      height: 80%;
+      background-color: #fff4;
     }
   }
 }

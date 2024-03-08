@@ -8,7 +8,9 @@ interface Props {
 export const Header: FC<Props> = () => {
   return (
     <nav className='header'>
-      Aarons Portfolio
+      <div className='header__text'>
+        Aarons Portfolio
+      </div>
     </nav>
   );
 }

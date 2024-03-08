@@ -5,21 +5,33 @@
 
   &__gradient {
     height: 300vh;
+    width: 200vw;
     background-image: linear-gradient(31deg, rgba(186,67,109,1) 0%, rgba(217,206,105,1) 100%);
-  }
-
-  &__svg {
-    height: 350vh;
-    background-image: url('../../assets/sprinkle.svg');
-  }
-}
-
-.animate {
-  &__gradient {
-    transform: translateY(-150vh);
   }
   
   &__svg {
-    transform: translateY(-200vh);
+    height: 350vh;
+    width: 200vw;
+    background-image: url('../../assets/sprinkle.svg');
+    transform: translateX(10px);
   }
+
+  &.animate-svg {
+    animation: looming-hover 6s linear infinite;
+  }
+
+  &.transition {
+    &__gradient {
+      transform: translateY(-150vh);
+    }
+    
+    &__svg {
+      transform: translateY(-200vh) translateX(10px);
+    }
+  }
+}
+
+@keyframes looming-hover {
+  from { transform: rotate(0deg) translateX(10px) rotate(0deg) translateY(-200vh); }
+  to   { transform: rotate(360deg) translateX(10px) rotate(-360deg) translateY(-200vh); }
 }

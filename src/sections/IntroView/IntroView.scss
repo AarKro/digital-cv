@@ -6,6 +6,7 @@
   opacity: 1;
   transform: translateY(0);
   transition: opacity ease-out .7s, transform ease-in .7s;
+  color: $egg-shell;
   
   &.intro-finished {
     opacity: 0;

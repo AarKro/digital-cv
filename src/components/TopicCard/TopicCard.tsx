@@ -23,6 +23,11 @@ export const TopicCard: FC<PropsWithChildren<Props>> = ({ children, modalContent
           <div className='topic-card__content'>
             {children}
           </div>
+          <div className='topic-card__title'>
+            <div className='topic-card__title--text'>
+              {name}
+            </div>
+          </div>
         </article>
       </FadeIn>
       <TopicModal title={name} isOpen={open} toggleModal={toggleModal} content={modalContent}/>

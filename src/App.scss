@@ -11,9 +11,9 @@ body {
 }
 
 .app {
-  width: calc($breakpoint-xxl - 10px);
   margin: 0 auto;
   overflow: auto;
+  width: calc($breakpoint-xxl - 10px);
 
   @media (max-width: $breakpoint-xxl) {
     width: calc($breakpoint-xl - 10px);

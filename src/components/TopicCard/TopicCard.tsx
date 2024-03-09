@@ -6,9 +6,10 @@ import './TopicCard.scss';
 interface Props {
   name: string;
   modalContent: React.ReactNode;
+  github: string;
 }
 
-export const TopicCard: FC<PropsWithChildren<Props>> = ({ children, modalContent, name }) => {
+export const TopicCard: FC<PropsWithChildren<Props>> = ({ children, modalContent, name, github }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleModal = (event: React.MouseEvent) => {
@@ -30,7 +31,7 @@ export const TopicCard: FC<PropsWithChildren<Props>> = ({ children, modalContent
           </div>
         </article>
       </FadeIn>
-      <TopicModal title={name} isOpen={open} toggleModal={toggleModal} content={modalContent}/>
+      <TopicModal title={name} isOpen={open} toggleModal={toggleModal} content={modalContent} github={github}/>
     </div>
   );
 }

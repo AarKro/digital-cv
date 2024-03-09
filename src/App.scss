@@ -10,13 +10,20 @@ body {
   margin: 0;
 }
 
+code {
+  font-family: Consolas,"courier new";
+  background-color: #fff4;
+  padding: 0 2px;
+  color: $grey-blue;
+}
+
 .app {
   margin: 0 auto;
   overflow: auto;
-  width: calc($breakpoint-xxl - 10px);
+  width: calc($breakpoint-xxl - 80px);
 
   @media (max-width: $breakpoint-xxl) {
-    width: calc($breakpoint-xl - 10px);
+    width: calc($breakpoint-xl - 80px);
   }
 
   @media (max-width: $breakpoint-xl) {

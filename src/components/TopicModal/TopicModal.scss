@@ -16,6 +16,7 @@
   transform: translateY(-10%);
   transition: all .2s ease;
   z-index: 1;
+  overflow: auto;
 
   &.open {
     pointer-events: all;
@@ -23,13 +24,37 @@
     transform: translateY(0);
   }
 
+  &__github {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    margin-top: -20px;
+    text-decoration: none;
+    width: fit-content;
+    
+    &--wrapper {
+      display: flex;
+    }
+  
+    &-link {
+      color: $grey-blue;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    & svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   &__content {
     margin: 0 auto;
-    overflow: auto;
-    width: calc($breakpoint-xxl - 10px);
+    width: calc($breakpoint-xxl - 80px);
 
     @media (max-width: $breakpoint-xxl) {
-      width: calc($breakpoint-xl - 10px);
+      width: calc($breakpoint-xl - 80px);
     }
 
     @media (max-width: $breakpoint-xl) {
@@ -48,7 +73,7 @@
       padding: 0;
       margin: 0;
       cursor: pointer;
-  
+
       & > svg {
         width: 25px;
         height: 25px;
@@ -57,6 +82,7 @@
 
     &-title {
       flex: 1;
+      font-size: 2em;
       color: $grey-blue;
     }
   }

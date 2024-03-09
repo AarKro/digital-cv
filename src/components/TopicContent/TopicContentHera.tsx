@@ -5,7 +5,7 @@ import HeraHelpImg from '../../assets/hera_help.png';
 import HeraQueueImg from '../../assets/hera_queue.png';
 import HeraNowPLayingImg from '../../assets/hera_nowplaying.png';
 import { InlineImg } from "../InlineImg/InlineImg";
-import './TopicContentHera.scss';
+import './TopicContent.scss';
 
 const sections = [
   {
@@ -29,8 +29,8 @@ export const TopicContentHera: FC = () => {
   const [sectionOne, sectionTwo, sectionThree, sectionFour] = sections;
 
   return (
-    <article className="topic-content-hera">
-      <section className="topic-content-hera__left">
+    <article className="topic-content">
+      <section className="topic-content__left">
         <h3>{sectionOne.title}</h3>
         <p><Markdown>{sectionOne.content}</Markdown></p>
         <h3>{sectionTwo.title}</h3>
@@ -38,7 +38,7 @@ export const TopicContentHera: FC = () => {
         <InlineImg img={HeraVoteImg} alt="hera vote" caption="*depiction of the `$vote` command*"/>
         <InlineImg img={HeraQueueImg} alt="hera queue" caption="*depiction of the `$queue` command after it has been filled with 48 songs*"/>
       </section>
-      <section className="topic-content-hera__right">
+      <section className="topic-content__right">
         <h3>{sectionThree.title}</h3>
         <p><Markdown>{sectionThree.content}</Markdown></p>
         <InlineImg img={HeraNowPLayingImg} alt="hera now playing" caption="*depiction of the `$nowPlaying` while Hera is playing music*"/>

@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
 
+  @supports (-webkit-touch-callout: none) {
+    height: 120vh;
+  }
+
   & .view {
     flex: 1;
     display: flex;

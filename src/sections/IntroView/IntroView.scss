@@ -8,6 +8,10 @@
   transition: opacity ease-out .7s, transform ease-in .7s;
   color: $egg-shell;
   
+  @supports (-webkit-touch-callout: none) {
+    height: 120vh;
+  }
+  
   &.intro-finished {
     opacity: 0;
     transform: translateY(-50%);

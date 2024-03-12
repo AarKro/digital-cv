@@ -16,7 +16,7 @@ export const App = () => {
 
   return (
     <article className='app__wrapper'>
-      <Background animate={introFinished}/>
+      <Background animateStart={introFinished}/>
       <div className='app'>
         {!hideIntro 
           ? <IntroView isIntroFinished={introFinished} setAnimationFinished={setIntroFinished}/>

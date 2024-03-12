@@ -20,6 +20,10 @@
 
   &.animate-svg {
     animation: looming-hover 6s linear infinite;
+    
+    &--safari {
+      animation: looming-hover--safari 6s linear infinite;
+    }
   }
 
   &.transition {
@@ -36,4 +40,9 @@
 @keyframes looming-hover {
   from { transform: rotate(0deg) translate3d(10px, 0, 0) rotate(0deg) translate3d(0, -200vh, 0); }
   to   { transform: rotate(360deg) translate3d(10px, 0, 0) rotate(-360deg) translate3d(0, -200vh, 0); }
+}
+
+@keyframes looming-hover--safari {
+  from { transform: rotate(0deg) translate3d(10px, 0, 0) rotate(0deg) translate3d(0, 0, 0); }
+  to   { transform: rotate(360deg) translate3d(10px, 0, 0) rotate(-360deg) translate3d(0, 0, 0); }
 }

@@ -15,7 +15,7 @@
     height: 350vh;
     width: 200vw;
     background-image: url('../../assets/sprinkle.svg');
-    transform: translateX(10px);
+    transform: translate3d(10px, 0, 0);
   }
 
   &.animate-svg {
@@ -24,16 +24,16 @@
 
   &.transition {
     &__gradient {
-      transform: translateY(-150vh);
+      transform: translate3d(0, -150vh, 0);
     }
     
     &__svg {
-      transform: translateY(-200vh) translateX(10px);
+      transform: translate3d(10px, -200vh, 0);
     }
   }
 }
 
 @keyframes looming-hover {
-  from { transform: rotate(0deg) translateX(10px) rotate(0deg) translateY(-200vh); }
-  to   { transform: rotate(360deg) translateX(10px) rotate(-360deg) translateY(-200vh); }
+  from { transform: rotate(0deg) translate3d(10px, 0, 0) rotate(0deg) translate3d(0, -200vh, 0); }
+  to   { transform: rotate(360deg) translate3d(10px, 0, 0) rotate(-360deg) translate3d(0, -200vh, 0); }
 }
